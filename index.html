@@ -2,59 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FormGenius – Smart Form Analytics</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FormGenius – Smart Form Insights</title>
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 600px;
+      font-size: 1.2rem;
+      color: #94a3b8;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      padding: 14px 32px;
+      background-color: #2563eb;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+    }
+
+    img.mockup {
+      margin-top: 3rem;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+    }
   </style>
 </head>
-<body class="bg-gray-900 text-white">
-  <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 py-12">
-    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">FormGenius</h1>
-    <p class="text-xl md:text-2xl text-gray-300 mb-6 max-w-xl">
-      Smart, privacy-first form analytics that help you understand where users drop off — no bloat, no code.
-    </p>
-    <a href="https://tally.so/r/m0ck-form123" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold text-lg transition">
-      Join the Waitlist
-    </a>
-  </section>
+<body>
 
-  <!-- Features Section -->
-  <section class="py-16 px-6 bg-gray-800">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-center">
-      <div>
-        <h3 class="text-xl font-bold mb-2">Field-Level Analytics</h3>
-        <p class="text-gray-400">See exactly which form fields users abandon most often.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-2">Drop-Off Tracking</h3>
-        <p class="text-gray-400">Identify where users leave your form and why.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-2">Zero-Code Integration</h3>
-        <p class="text-gray-400">Copy a script or paste your form link — and you're live.</p>
-      </div>
-    </div>
-  </section>
+  <h1>FormGenius</h1>
+  <p>Turn your boring forms into powerful insight dashboards — <br>privacy-first, plug-n-play, and built for small businesses.</p>
 
-  <!-- Screenshot Section -->
-  <section class="py-16 px-6 text-center bg-gray-900">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-8">Dashboard Preview</h2>
-    <img src="./dashboard-mockup.png" alt="FormGenius Dashboard" class="mx-auto w-full max-w-4xl rounded-lg shadow-xl">
-  </section>
+  <!-- Waitlist button -->
+  <button onclick="Tally.openPopup('https://tally.so/r/3Eooor', {
+    width: 600,
+    overlay: true,
+    autoClose: true
+  })">
+    Join the Waitlist
+  </button>
 
-  <!-- CTA Footer -->
-  <footer class="bg-gray-800 py-12 text-center">
-    <h3 class="text-2xl font-bold mb-4">Be the first to get access</h3>
-    <a href="https://tally.so/r/m0ck-form123" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold text-lg transition">
-      Join the Waitlist
-    </a>
-    <p class="text-gray-500 mt-4 text-sm">© 2025 FormGenius. Built with ❤️ for small businesses.</p>
-  </footer>
+  <!-- Dashboard mockup -->
+  <img src="dashboard.png" alt="FormGenius Dashboard Preview" class="mockup"/>
+
+  <!-- Tally embed script -->
+  <script>
+    let d = document, s = d.createElement("script");
+    s.src = "https://tally.so/widgets/embed.js";
+    s.onload = function() { Tally.loadEmbeds(); };
+    d.body.appendChild(s);
+  </script>
+
 </body>
 </html>
