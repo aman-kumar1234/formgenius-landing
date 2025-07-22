@@ -1,84 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FormGenius – Smart Form Insights</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #0f172a;
-      color: #f1f5f9;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FormGenius – Turn Forms into Insights</title>
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
+    <!-- Tally Embed -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
 
-    p {
-      max-width: 600px;
-      font-size: 1.2rem;
-      color: #94a3b8;
-      margin-bottom: 2rem;
-    }
+    <!-- Font & Styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background-color: #0d0d15;
+        color: #ccc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        padding: 20px;
+      }
 
-    button {
-      padding: 14px 32px;
-      background-color: #2563eb;
-      color: white;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+      h1 {
+        font-size: 3rem;
+        color: #f3f3f3;
+        margin-bottom: 1rem;
+      }
 
-    button:hover {
-      background-color: #1e40af;
-    }
+      p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin-bottom: 2rem;
+      }
 
-    img.mockup {
-      margin-top: 3rem;
-      width: 90%;
-      max-width: 800px;
-      border-radius: 12px;
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-    }
-  </style>
-</head>
-<body>
+      .waitlist-btn {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+        background-color: #3b82f6;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
 
-  <h1>FormGenius</h1>
-  <p>Turn your boring forms into powerful insight dashboards — <br>privacy-first, plug-n-play, and built for small businesses.</p>
+      .waitlist-btn:hover {
+        background-color: #2563eb;
+      }
 
-  <!-- Waitlist button -->
-  <button onclick="Tally.openPopup('https://tally.so/r/3Eooor', {
-    width: 600,
-    overlay: true,
-    autoClose: true
-  })">
-    Join the Waitlist
-  </button>
+      .footer {
+        margin-top: 3rem;
+        font-size: 0.9rem;
+        color: #666;
+      }
+    </style>
+  </head>
 
-  <!-- Dashboard mockup -->
-  <img src="dashboard.png" alt="FormGenius Dashboard Preview" class="mockup"/>
+  <body>
+    <h1>FormGenius</h1>
+    <p>
+      Turn your boring forms into powerful insight dashboards — <br />
+      privacy-first, plug-n-play, and built for small businesses.
+    </p>
 
-  <!-- Tally embed script -->
-  <script>
-    let d = document, s = d.createElement("script");
-    s.src = "https://tally.so/widgets/embed.js";
-    s.onload = function() { Tally.loadEmbeds(); };
-    d.body.appendChild(s);
-  </script>
+    <!-- Tally Modal Button -->
+    <button class="waitlist-btn" data-tally-open="3Eooor" data-tally-layout="modal" data-tally-width="600" data-tally-overlay="1" data-tally-auto-close="0">
+      Join the Waitlist
+    </button>
 
-</body>
+    <div class="footer">Built with ❤️ by Aman for smart forms.</div>
+  </body>
 </html>
